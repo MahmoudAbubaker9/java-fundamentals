@@ -28,6 +28,7 @@ public class Main {
             double random = Math.random();
             if (random < 0.5) {
                 counter = counter +1 ;
+                headsNumber = 0
                 System.out.println("Tails");
             } else {
                 headsNumber = headsNumber + 1;
