@@ -24,7 +24,7 @@ public class Main {
     public static void flipNHeads(int n) {
         int counter = 0;
         int headsNumber = 0;
-        while (headsNumber > n) {
+        while (headsNumber != n) {
             double random = Math.random();
             if (random < 0.5) {
                 counter = counter +1 ;
