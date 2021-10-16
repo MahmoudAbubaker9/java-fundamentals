@@ -3,16 +3,19 @@
  */
 package basiclibrary;
 
-import com.sun.tools.javac.Main;
+//import com.sun.tools.javac.Main;
 import org.junit.jupiter.api.Test;
+
+import java.util.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-//    @Test void someLibraryMethodReturnsTrue() {
+    //    @Test void someLibraryMethodReturnsTrue() {
 //        Library classUnderTest = new Library();
 //        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
 //    }
-Library testObject = new Library();
+    Library testObject = new Library();
     @Test public void testRollMethod(){
         int[]arr = testObject.roll(6);
         assertEquals(6,arr.length);
@@ -42,6 +45,39 @@ Library testObject = new Library();
         int[] actValue=testObject.lowestAvg(Array);
         int[] expValue={55, 54, 60, 53, 59, 57, 61};
         assertArrayEquals(expValue,actValue);
+    }
+
+    @Test public void testAnalyzeWeather(){
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        String output = testObject.weatherData(weeklyMonthTemperatures);
+        String expected =
+                "Never saw temperature: 63\n" +
+                "Never saw temperature: 67\n" +
+                "Never saw temperature: 68\n" +
+                "Never saw temperature: 69\n";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testTallyMethod(){
+        List<String> voteNames = new ArrayList<>();
+        voteNames.add("Bush");
+        voteNames.add("Bush");
+        voteNames.add("Bush");
+        voteNames.add("Shrub");
+        voteNames.add("Hedge");
+        voteNames.add("Shrub");
+        voteNames.add("Bush");
+        voteNames.add("Hedge");
+        voteNames.add("Bush");
+        String winner = testObject.tally(voteNames);
+        String expected = "Bush";
+        assertEquals("Bush",expected,winner);
     }
 
 }
