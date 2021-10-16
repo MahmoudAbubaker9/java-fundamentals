@@ -63,4 +63,54 @@ public class Library {
         }
         return arr[lowestArray];
     }
-}
+
+    public String weatherData(int[][] array) {
+        int high = 0;
+        int low = array[0][0];
+        String outputTemp = "";
+
+        Set<Integer> tempData = new HashSet<Integer>();
+
+        for(int[] innerArr : array){
+            for(int numb : innerArr){
+                tempData.add(numb);
+                if(numb > high)
+                    high = numb;
+                if(numb < low)
+                    low = numb;
+            }
+        }
+
+        for (int i = low; i <= high; i++) {
+            if (!tempData.contains(i)) {
+                outputTemp += "Never saw temperature: " + i + "\n";
+            }
+        }
+
+        System.out.println("High: " + high);
+        System.out.println("Low: " + low);
+        System.out.println(outputTemp);
+        return outputTemp;
+
+        }
+
+    public static String tally (List<String>  list) {
+        HashSet<String> voteNames = new HashSet<String>(list);
+        int counter = 0;
+        int hightVotes = 0;
+
+        String hightName = "";
+        for (String name : voteNames) {
+            for (int i = 0; i < list.size(); i++)
+                if (list.get(i) == name)
+                    counter++;
+            if (counter > hightVotes) {
+                hightVotes = counter;
+                hightName = name;
+            }
+            counter = 0;
+        }
+        return hightName;
+    }
+    }
+
