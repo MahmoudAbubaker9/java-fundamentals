@@ -2,39 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50346899-689a-452d-a4ea-14e0d3a80fe3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/java-fundamentals.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/lib/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/lib/src/main/java/basiclibrary/Library.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/lib/src/test/java/basiclibrary/LibraryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basiclibrary/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/basics/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/.idea/basics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/basics/.idea/basics.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basics/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basics/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basics/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basics/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basics/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/basics/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/basics/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/lib/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/lib/src/main/java/inheritance/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/lib/src/test/java/inheritance/LibraryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inheritance/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,14 +22,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1zPPejndEspHSZcFpgBOd3S6Pz8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/inheritance" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -64,5 +45,19 @@
       <updated>1634046850091</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
