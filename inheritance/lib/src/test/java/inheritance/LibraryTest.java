@@ -3,40 +3,55 @@
  */
 package inheritance;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test public void restaurantTest(){
-        Restaurant restaurant =new Restaurant("Brisket",4,"$$");
-        assertEquals("Restaurant{name='Brisket', stars=4, price=$$, reviews=[]}",restaurant.toString());
-        assertEquals("Brisket",restaurant.getName());
-        assertEquals(4,restaurant.getStars());
-        assertEquals("$$",restaurant.getPrice());
-    }
-    @Test public void restaurantTest2(){
-        Restaurant restaurant =new Restaurant("Sufra",5,"$$$$");
-        assertEquals("Restaurant{name='Sufra', stars=5, price=$$$$, reviews=[]}",restaurant.toString());
-        assertEquals("Sufra",restaurant.getName());
-        assertEquals(5,restaurant.getStars());
-        assertEquals("$$$$",restaurant.getPrice());
+    @Test
+    public void restaurantTest() {
+        Restaurant restaurant = new Restaurant("Brisket", 4, "$$");
+        assertEquals("Restaurant{name='Brisket', stars=4, price=$$, reviews=[]}", restaurant.toString());
+        assertEquals("Brisket", restaurant.getName());
+        assertEquals(4, restaurant.getStars());
+        assertEquals("$$", restaurant.getPrice());
     }
 
-    @Test public  void  addReviewTest(){
-        Restaurant restaurant =new Restaurant("Brisket",4,"$$");
-        Review review=new Review("its a good restuarant","Ahmad",5);
-        restaurant.addReview(review);
-        assertEquals("Ahmad", restaurant.getReviews().get(0).getAuthor());
-        assertEquals("its a good restuarant", restaurant.getReviews().get(0).getBody());
-        assertEquals(5, restaurant.getReviews().get(0).getNumberOfStars());
+    @Test
+    public void restaurantTest2() {
+        Restaurant restaurant = new Restaurant("Sufra", 5, "$$$$");
+        assertEquals("Restaurant{name='Sufra', stars=5, price=$$$$, reviews=[]}", restaurant.toString());
+        assertEquals("Sufra", restaurant.getName());
+        assertEquals(5, restaurant.getStars());
+        assertEquals("$$$$", restaurant.getPrice());
     }
 
-    @Test public  void  addReviewTest2(){
-        Restaurant restaurant =new Restaurant("Sufra",5,"$$$$");
-        Review review=new Review("its a good restuarant","Mahmoud",3);
-        restaurant.addReview(review);
-        assertEquals("Mahmoud", restaurant.getReviews().get(0).getAuthor());
-        assertEquals("its a good restuarant", restaurant.getReviews().get(0).getBody());
-        assertEquals(3, restaurant.getReviews().get(0).getNumberOfStars());
+    @Test
+    public void addReviewlessthan5Test() {
+        Restaurant restaurant = new Restaurant("Brisket", 5, "$$");
+        Review review = new Review("its a good restuarant", "Ahmad", -2);
+        assertEquals("Ahmad", review.getAuthor());
+        assertEquals("its a good restuarant", review.getBody());
+        assertEquals("You can only review from 0 star to 5 star", restaurant.addReview(review));
     }
+
+    @Test
+    public void addReviewTest2() {
+        Restaurant restaurant = new Restaurant("Sufra", 5, "$$$$");
+        Review review = new Review("its a good restuarant", "Mahmoud", 2);
+        assertEquals("Mahmoud", review.getAuthor());
+        assertEquals("its a good restuarant", review.getBody());
+        assertEquals("new rating have been added for Sufra the rate is 2", restaurant.addReview(review));
+    }
+
+    @Test
+    public void addReviewGreaterthan5Test() {
+        Restaurant restaurant = new Restaurant("Brisket", 5, "$$");
+        Review review = new Review("its a good restuarant", "Ahmad", 7);
+        assertEquals("Ahmad", review.getAuthor());
+        assertEquals("its a good restuarant", review.getBody());
+        assertEquals("You can only review from 0 star to 5 star", restaurant.addReview(review));
+    }
+
+
 }
