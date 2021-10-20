@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Restaurant {
     private String name;
-    private int numberOfStars;
+    private int numberOfStars; // How many stars did the reviewer give the restaurant
     private String price;
-    private double numOfRating;
-    private double rate=0;
+    private double numOfRating =0;  // How many times has the restaurant been rated
+    private double rate=0; // Total Rating for restaurant
     private ArrayList<Review> ratingList = new ArrayList<>();
 
     public Restaurant(String name, int numberOfStars, String price) {
@@ -31,6 +31,14 @@ public class Restaurant {
     public void setStars(int numberOfStars) {
         this.numberOfStars = numberOfStars;
 
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
     }
 
     public double getRating() {
