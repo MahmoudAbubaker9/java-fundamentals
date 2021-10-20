@@ -48,3 +48,10 @@ Class Restaurent :
 should have a name, a number of stars betweeen 0 and 5, and a price category (i.e. number of dollar signs). Implement a Restaurant constructor for the data and override toString method to get data string.
 
 To run the test just type $ ./gradlew test in the root directory.
+
+## Inheritance, day 2  (Lab 7)
+
+* created class called shop has the same logic as Restaurent class
+
+* created class called theatre  and added a list of movies in it as attribute and 2 methods one to add movie and one to delete
+
