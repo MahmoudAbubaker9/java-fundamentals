@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Restaurant {
     private String name;
-    private int numberOfStars;
+    private int numberOfStars; // How many stars did the reviewer give the restaurant
     private String price;
-    private double numOfRating=0;
-    private double rate=0;
+    private double numOfRating =0;  // How many times has the restaurant been rated
+    private double rate=0; // Total Rating for restaurant
     private ArrayList<Review> ratingList = new ArrayList<>();
 
     public Restaurant(String name, int numberOfStars, String price) {
@@ -30,6 +30,27 @@ public class Restaurant {
 
     public void setStars(int numberOfStars) {
         this.numberOfStars = numberOfStars;
+
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+    public double getRating() {
+        return rate;
+    }
+
+    public void setRating(double rating) {
+        this.rate = rating;
+    }
+
+    public void setNumOfRating(double numOfRating) {
+        this.numOfRating = numOfRating;
     }
 
     public String getPrice() {
@@ -41,16 +62,17 @@ public class Restaurant {
     }
 
     public String addReview(Review review) {
-        if (review.getNumberOfStars()>5){
-            return("You can only review from 1 star to 5 star");
-        }
-        else {
-            Review newReview = new Review(review.getBody(), review.getAuthor(), review.getNumberOfStars());
-            ratingList.add(newReview);
+        if (( review.getNumberOfStar() < 0) || (review.getNumberOfStar() > 5)){
+            return("You can only review from 0 star to 5 star");
+        }else {
+            ratingList.add(review);
             numOfRating++;
-            rate = (review.getNumberOfStars() + rate) / numOfRating;
-            return "new rating have been added for"+name;
+            rate = (( review.getNumberOfStar()+ rate )/ numOfRating);
+            this.rate =rate;
+            return "new rating have been added for "+name+" the rate is "+ review.getNumberOfStar() ;
         }
+
+
     }
 
     public ArrayList<Review> getReviews() {

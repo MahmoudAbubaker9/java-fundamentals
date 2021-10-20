@@ -6,7 +6,7 @@ package inheritance;
 public class Library {
     public static void main(String[] args) {
         Restaurant resReview1 = new Restaurant("Brisket", 4, "$$");
-        Review review1 = new Review("its a good restuarant", "Ahmad", 5);
+        Review review1 = new Review("its a good restuarant", "Ahmad", 4);
         resReview1.addReview(review1);
 
         Restaurant resReview2 = new Restaurant("Sufra", 5, "$$$$");

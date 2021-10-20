@@ -3,40 +3,113 @@
  */
 package inheritance;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test public void restaurantTest(){
-        Restaurant restaurant =new Restaurant("Brisket",4,"$$");
-        assertEquals("Restaurant{name='Brisket', stars=4, price=$$, reviews=[]}",restaurant.toString());
-        assertEquals("Brisket",restaurant.getName());
-        assertEquals(4,restaurant.getStars());
-        assertEquals("$$",restaurant.getPrice());
-    }
-    @Test public void restaurantTest2(){
-        Restaurant restaurant =new Restaurant("Sufra",5,"$$$$");
-        assertEquals("Restaurant{name='Sufra', stars=5, price=$$$$, reviews=[]}",restaurant.toString());
-        assertEquals("Sufra",restaurant.getName());
-        assertEquals(5,restaurant.getStars());
-        assertEquals("$$$$",restaurant.getPrice());
+    @Test
+    public void restaurantTest() {
+        Restaurant restaurant = new Restaurant("Brisket", 4, "$$");
+        assertEquals("Restaurant{name='Brisket', stars=4, price=$$, reviews=[]}", restaurant.toString());
+        assertEquals("Brisket", restaurant.getName());
+        assertEquals(4, restaurant.getStars());
+        assertEquals("$$", restaurant.getPrice());
     }
 
-    @Test public  void  addReviewTest(){
-        Restaurant restaurant =new Restaurant("Brisket",4,"$$");
-        Review review=new Review("its a good restuarant","Ahmad",5);
-        restaurant.addReview(review);
-        assertEquals("Ahmad", restaurant.getReviews().get(0).getAuthor());
-        assertEquals("its a good restuarant", restaurant.getReviews().get(0).getBody());
-        assertEquals(5, restaurant.getReviews().get(0).getNumberOfStars());
+    @Test
+    public void restaurantTest2() {
+        Restaurant restaurant = new Restaurant("Sufra", 5, "$$$$");
+        assertEquals("Restaurant{name='Sufra', stars=5, price=$$$$, reviews=[]}", restaurant.toString());
+        assertEquals("Sufra", restaurant.getName());
+        assertEquals(5, restaurant.getStars());
+        assertEquals("$$$$", restaurant.getPrice());
     }
 
-    @Test public  void  addReviewTest2(){
-        Restaurant restaurant =new Restaurant("Sufra",5,"$$$$");
-        Review review=new Review("its a good restuarant","Mahmoud",3);
-        restaurant.addReview(review);
-        assertEquals("Mahmoud", restaurant.getReviews().get(0).getAuthor());
-        assertEquals("its a good restuarant", restaurant.getReviews().get(0).getBody());
-        assertEquals(3, restaurant.getReviews().get(0).getNumberOfStars());
+    @Test
+    public void addReviewlessthan5Test() {
+        Restaurant restaurant = new Restaurant("Brisket", 5, "$$");
+        Review review = new Review("its a good restuarant", "Ahmad", -2);
+        assertEquals("Ahmad", review.getAuthor());
+        assertEquals("its a good restuarant", review.getBody());
+        assertEquals("You can only review from 0 star to 5 star", restaurant.addReview(review));
     }
+
+    @Test
+    public void addReviewTest2() {
+        Restaurant restaurant = new Restaurant("Sufra", 5, "$$$$");
+        Review review = new Review("its a good restuarant", "Mahmoud", 2);
+        assertEquals("Mahmoud", review.getAuthor());
+        assertEquals("its a good restuarant", review.getBody());
+        assertEquals("new rating have been added for Sufra the rate is 2", restaurant.addReview(review));
+        assertEquals(4.5,restaurant.getRate());
+    }
+
+    @Test
+    public void addReviewGreaterthan5Test() {
+        Restaurant restaurant = new Restaurant("Brisket", 5, "$$");
+        Review review = new Review("its a good restuarant", "Ahmad", 7);
+        assertEquals("Ahmad", review.getAuthor());
+        assertEquals("its a good restuarant", review.getBody());
+        assertEquals("You can only review from 0 star to 5 star", restaurant.addReview(review));
+    }
+
+    @Test void shopTest(){
+        Shop newShop = new Shop("HomeCenter", "furniture Shop","$$$$");
+        Review review = new Review("its a good Shop", "Ahmad", 4);
+        assertEquals("new rating have been added for HomeCenter the rate is 4", newShop.addReview(review));
+        assertEquals("Shop{name='HomeCenter', description='furniture Shop', price='$$$$', shopRate=4.0}",newShop.toString());
+    }
+
+    @Test void shopGreaterthan5Test(){
+        Shop newShop = new Shop("HomeCenter", "furniture Shop","$$$$");
+        Review review = new Review("its a good Shop", "Ahmad", 7);
+        assertEquals("You can only review from 0 star to 5 star", newShop.addReview(review));
+        assertEquals("Shop{name='HomeCenter', description='furniture Shop', price='$$$$', shopRate=0.0}",newShop.toString());
+    }
+
+    @Test void shoplessthan5Test(){
+        Shop newShop = new Shop("HomeCenter", "furniture Shop","$$$$");
+        Review review = new Review("", "Ahmad", -3);
+        assertEquals("You can only review from 0 star to 5 star", newShop.addReview(review));
+        assertEquals("Shop{name='HomeCenter', description='furniture Shop', price='$$$$', shopRate=0.0}",newShop.toString());
+    }
+
+    @Test void theaterTest(){
+        ArrayList<String> moviesList = new ArrayList<>();
+        moviesList.add("The Shawshank Redemption");
+        moviesList.add("The Godfather");
+        moviesList.add("The Dark Knight");
+        moviesList.add("12 Angry Men");
+        moviesList.add("Fight Club");
+        moviesList.add("Inception");
+
+        Review theatreReview = new Review("its a good movies" , "Ahmad", 3);
+        Theater newTheater = new Theater("Ahmad",moviesList);
+        newTheater.addReview(theatreReview);
+        String actual = newTheater.toString();
+
+        String expected = "Theater{name='Ahmad', theaterRate=3.0, moviesList=[The Shawshank Redemption, The Godfather, The Dark Knight, 12 Angry Men, Fight Club, Inception]}";
+        assertEquals(expected, actual);
+    }
+
+    @Test void addMovie(){
+        ArrayList<String> moviesList = new ArrayList<>();
+        Theater theater = new Theater("Ahmad",moviesList);
+        theater.addMovie("Inception");
+        assertEquals("[Inception]", moviesList.toString());
+    }
+
+    @Test void removeMovie(){
+        ArrayList<String> moviesList = new ArrayList<>();
+        Theater theater = new Theater("Ahmad",moviesList);
+        theater.addMovie("Inception");
+        theater.addMovie("Fight Club");
+        theater.removeMovie("Fight Club");
+        assertEquals("[Inception]", moviesList.toString());
+    }
+
 }

@@ -27,12 +27,12 @@ public class Review {
         this.author = author;
     }
 
-    public int getNumberOfStars() {
+    public int getNumberOfStar() {
         return numberOfStar;
     }
 
-    public void setNumberOfStars(int numberOfStars) {
-        this.numberOfStar = numberOfStars;
+    public void setNumberOfStar(int numberOfStar) {
+        this.numberOfStar = numberOfStar;
     }
 
     @Override
